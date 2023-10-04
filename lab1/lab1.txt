@@ -1,0 +1,46 @@
+p1
+
+primeNumber(n: int) => {
+    if (n < 2) {
+        return False
+    }
+    if (n === 2) {
+        return True
+    }
+    if (n %% 2 === 0) {
+        return False
+    }
+    d: int = 3
+    for (d * d <= n) step (d += 2) {
+        if (n %% d === 0) {
+            return False
+        }
+    }
+    return False
+}
+
+p2
+gcd(a: int, b: int) => {
+    if (a === 0) {
+        return b
+    }
+    return gcd(b %% a, a)
+}
+
+p3
+sum(n: intArray) => {
+    index: int = 0, Sum: int = 0
+    for (index < n.length) step (index += 1) {
+        Sum += n[index]
+    }
+    return Sum
+}
+
+p1-> 2 lexical errors
+primeNumber(n) => {
+    if (n < 2)
+        return False
+}
+
+* -> Parameters should always have a type.
+** -> Every scope needs to be in brackets, even if it is one line
