@@ -1,0 +1,43 @@
+program = {statement}
+
+function = function_name "(" parameter_list ")" "=>" "{" {statement} "}"
+
+parameter_list = parameter {"," parameter}
+
+parameter = identifier ":" data_type
+
+data_type = "int" | "boolean" | "double" | "string" | "intArray" | "booleanArray" | "doubleArray" | "stringArray"
+
+statement = var_decl_stmt| assign_stmt | if_stmt | for_stmt | return_stmt | function | while_stmt
+
+var_decl_stmt = identifier ":" data_type
+
+expression = int_expression | string_expression
+
+OPERATORS = "+" | "-" | "%" | "%%" | "**" | "*"
+
+int_expression = int_constant | identifier | 
+                   int_expression (OPERATORS) int_expression |
+                   "(" int_expression (OPERATORS) int_expression ")"
+string_expression = string_constant | identifier |
+                      string_expression "+" string_expression
+
+expression_list = expression {"," expression}
+
+assign_stmt = identifier "=" expression
+
+if_stmt = "if" "(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
+
+condition = expression ("===" | "<" | "<=" | ">" | ">=", "==") expression
+
+while_stmt = "while" "(" condition ")" "{" {statement} "}"
+
+for_stmt = "for" "(" condition ")" "step" "(" step ")" "{" {statement} "}"
+
+step = var_stmt "+=" var_stmt | constant
+
+return_stmt = "return" expression
+
+func_call_stmt = function_name "(" expression_list? ")"
+
+function_name = "print" | "read" 
