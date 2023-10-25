@@ -5,7 +5,7 @@ public class Main {
 
         String[] symbolsToBeAdded = {"a1", "1a", "b2", "c3", "d4", "a1"};
 
-        System.out.println("Add symbols to the SymbolTable\n==============================");
+        System.out.println("\n Add symbols to the SymbolTable\n==============================");
         for (String s : symbolsToBeAdded) {
             System.out.println(symbolTable.addSymbol(s));
         }
