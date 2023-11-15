@@ -1,0 +1,19 @@
+n: int
+read (n)
+if (n < 2) {
+    return False
+}
+if (n === 2) {
+    return True
+}
+if (n %% 2 === 0) {
+    return False
+}
+d: int
+d = 3
+for (d * d <= n) step (d += 2) {
+    if (n %% d === 0) {
+        return False
+    }
+}
+return False

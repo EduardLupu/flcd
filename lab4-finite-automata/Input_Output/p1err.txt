@@ -1,0 +1,4 @@
+primeNumber(n: int) => {
+    $
+    if (n < 2) \return False
+}

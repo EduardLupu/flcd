@@ -1,0 +1,7 @@
+sum(n: intArray) => {
+    index: int = 0, Sum: int = 0
+    for (index < n.length) step (index += 1) {
+        Sum += n[index]
+    }
+    return Sum
+}
